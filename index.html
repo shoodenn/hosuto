@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -13,6 +14,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 18px;
 }
 
 body {
@@ -106,18 +108,6 @@ a {
   font-size: 17px !important;
 }
 
-.profile-button {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 13px 20px;
-  background: #e5c78d;
-  color: #111;
-  text-decoration: none;
-  border-radius: 30px;
-  font-weight: bold;
-  font-size: 13px;
-}
-
 main {
   max-width: 760px;
   margin: auto;
@@ -141,6 +131,86 @@ main {
   border-bottom: 1px solid #454a52;
 }
 
+.card p {
+  font-size: 15px;
+  line-height: 2;
+  margin: 0 0 17px;
+}
+
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+/* 目次 */
+.toc {
+  max-width: 650px;
+  margin: 30px auto 0;
+  padding: 23px 16px;
+  border: 1px solid #8e7950;
+  border-radius: 15px;
+  background: #191c22;
+  text-align: left;
+}
+
+.toc h2 {
+  color: #e5c78d;
+  font-size: 21px;
+  text-align: center;
+  margin: 0 0 8px;
+}
+
+.toc-description {
+  text-align: center;
+  color: #b8bdc6;
+  font-size: 13px;
+  margin: 0 0 20px;
+}
+
+.toc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.toc-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 13px 10px;
+  min-height: 58px;
+  border-radius: 9px;
+  border: 1px solid #454a52;
+  background: #292d35;
+  text-decoration: none;
+  color: #f5f5f5;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.toc-link::after {
+  content: "↓";
+  color: #e5c78d;
+  font-size: 17px;
+  flex-shrink: 0;
+}
+
+.toc-link:hover {
+  background: #3a3f48;
+  border-color: #e5c78d;
+}
+
+.toc-link:focus-visible,
+.link-button:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
+
+.toc-link:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
 .profile-row {
   display: grid;
   grid-template-columns: 85px minmax(0, 1fr);
@@ -161,16 +231,6 @@ main {
 .value {
   font-size: 15px;
   font-weight: bold;
-}
-
-.card p {
-  font-size: 15px;
-  line-height: 2;
-  margin: 0 0 17px;
-}
-
-.card p:last-child {
-  margin-bottom: 0;
 }
 
 .gold {
@@ -200,12 +260,6 @@ main {
 
 .link-button:hover {
   background: #f5dfae;
-}
-
-.link-button:focus-visible,
-.profile-button:focus-visible {
-  outline: 3px solid #ffffff;
-  outline-offset: 3px;
 }
 
 .link-description {
@@ -320,7 +374,6 @@ main {
   margin-bottom: 15px;
 }
 
-/* ホストになった理由 */
 .story-lead {
   font-size: 18px !important;
   color: #e5c78d;
@@ -378,6 +431,15 @@ footer {
     padding: 22px 15px;
   }
 
+  .toc {
+    padding: 20px 12px;
+  }
+
+  .toc-link {
+    font-size: 12px;
+    padding: 11px 8px;
+  }
+
   .link-button {
     font-size: 15px;
   }
@@ -385,6 +447,12 @@ footer {
   .price-table th,
   .price-table td {
     font-size: 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 </style>
@@ -469,9 +537,56 @@ footer {
 
   </div>
 
-  <a class="profile-button" href="#profile">
-    プロフィールを見る ↓
-  </a>
+  <!-- クリックで移動できる目次 -->
+  <nav class="toc" aria-label="ページ内目次">
+
+    <h2>CONTENTS | 目次</h2>
+
+    <p class="toc-description">
+      気になる項目をタップすると移動できます！
+    </p>
+
+    <div class="toc-grid">
+
+      <a class="toc-link" href="#profile">
+        自己紹介
+      </a>
+
+      <a class="toc-link" href="#story">
+        ホストになった理由
+      </a>
+
+      <a class="toc-link" href="#personality">
+        僕の性格
+      </a>
+
+      <a class="toc-link" href="#alcohol">
+        お酒について
+      </a>
+
+      <a class="toc-link" href="#about">
+        自分らしさ
+      </a>
+
+      <a class="toc-link" href="#dream">
+        これからの目標
+      </a>
+
+      <a class="toc-link" href="#sns">
+        SNS
+      </a>
+
+      <a class="toc-link" href="#shop">
+        店舗情報・料金
+      </a>
+
+      <a class="toc-link" href="#notice">
+        ご来店時のお願い
+      </a>
+
+    </div>
+
+  </nav>
 
 </header>
 
@@ -520,7 +635,6 @@ footer {
 
 </section>
 
-<!-- ホストになった理由 -->
 <section class="card" id="story">
 
   <h2>STORY | なぜホストになったのか</h2>
@@ -642,7 +756,7 @@ footer {
 
 </section>
 
-<section class="card">
+<section class="card" id="personality">
 
   <h2>PERSONALITY | 僕の性格</h2>
 
@@ -660,7 +774,7 @@ footer {
 
 </section>
 
-<section class="card">
+<section class="card" id="alcohol">
 
   <h2>お酒について</h2>
 
@@ -682,7 +796,7 @@ footer {
 
 </section>
 
-<section class="card">
+<section class="card" id="about">
 
   <h2>ABOUT ME | 自分らしさ</h2>
 
@@ -703,7 +817,7 @@ footer {
 
 </section>
 
-<section class="card">
+<section class="card" id="dream">
 
   <h2>DREAM | これからの目標</h2>
 
@@ -735,7 +849,6 @@ footer {
 
 </section>
 
-<!-- SNS -->
 <section class="card" id="sns">
 
   <h2>SNS | しょーでんのSNS</h2>
@@ -759,7 +872,6 @@ footer {
 
 </section>
 
-<!-- 店舗情報 -->
 <section class="card" id="shop">
 
   <h2>SHOP | 店舗情報</h2>
@@ -881,7 +993,6 @@ footer {
 
 </section>
 
-<!-- ご来店時のお願い -->
 <section class="card" id="notice">
 
   <h2>NOTICE | ご来店時のお願い</h2>
