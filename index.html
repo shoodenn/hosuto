@@ -233,7 +233,6 @@ main {
 }
 
 .shop-address {
-  color: #f5f5f5;
   font-size: 15px;
   line-height: 1.9;
 }
@@ -242,6 +241,98 @@ main {
   color: #b8bdc6;
   font-size: 13px;
   margin-bottom: 5px;
+}
+
+/* 営業時間 */
+.business-info {
+  background: #252a31;
+  border-radius: 12px;
+  padding: 20px 16px;
+  margin-bottom: 20px;
+}
+
+.business-title {
+  color: #e5c78d;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.business-row {
+  padding: 12px 0;
+  border-bottom: 1px solid #ffffff20;
+}
+
+.business-row:last-child {
+  border-bottom: none;
+}
+
+.business-label {
+  color: #b8bdc6;
+  font-size: 13px;
+}
+
+.business-value {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+/* 料金表 */
+.price-box {
+  background: #252a31;
+  border-radius: 12px;
+  padding: 20px 14px;
+  margin-bottom: 20px;
+}
+
+.price-title {
+  color: #e5c78d;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.price-table th,
+.price-table td {
+  padding: 14px 5px;
+  border-bottom: 1px solid #ffffff20;
+  font-size: 14px;
+}
+
+.price-table th {
+  text-align: left;
+  font-weight: 500;
+  color: #f5f5f5;
+}
+
+.price-table td {
+  text-align: right;
+  color: #e5c78d;
+  font-weight: bold;
+  white-space: nowrap;
+  font-size: 15px;
+}
+
+.price-table tr:last-child th,
+.price-table tr:last-child td {
+  border-bottom: none;
+}
+
+.price-category {
+  background: #353a43;
+  color: #e5c78d;
+  padding: 9px 10px;
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 18px;
 }
 
 .notice {
@@ -298,6 +389,11 @@ footer {
 
   .link-button {
     font-size: 15px;
+  }
+
+  .price-table th,
+  .price-table td {
+    font-size: 13px;
   }
 }
 </style>
@@ -587,17 +683,13 @@ footer {
 
   <div class="shop-info">
 
-    <div class="shop-label">
-      店舗名
-    </div>
+    <div class="shop-label">店舗名</div>
 
     <div class="shop-name">
       Club CRYSTAL
     </div>
 
-    <div class="shop-label">
-      所在地
-    </div>
+    <div class="shop-label">所在地</div>
 
     <div class="shop-address">
       東京都新宿区歌舞伎町2丁目14-8<br>
@@ -606,6 +698,94 @@ footer {
 
   </div>
 
+  <!-- 営業時間 -->
+  <div class="business-info">
+
+    <div class="business-title">
+      営業時間・営業日
+    </div>
+
+    <div class="business-row">
+      <div class="business-label">
+        営業時間
+      </div>
+      <div class="business-value">
+        19:00 ～ 翌1:00
+      </div>
+    </div>
+
+    <div class="business-row">
+      <div class="business-label">
+        営業曜日
+      </div>
+      <div class="business-value">
+        月・火・木・金・土・日
+      </div>
+    </div>
+
+    <div class="business-row">
+      <div class="business-label">
+        定休日
+      </div>
+      <div class="business-value">
+        毎週水曜日
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 料金 -->
+  <div class="price-box">
+
+    <div class="price-title">
+      PRICE | 料金案内
+    </div>
+
+    <div class="price-category">
+      初回料金
+    </div>
+
+    <table class="price-table">
+      <tr>
+        <th>初回 1時間</th>
+        <td>1,500円</td>
+      </tr>
+      <tr>
+        <th>初回 90分</th>
+        <td>3,000円</td>
+      </tr>
+    </table>
+
+    <div class="price-category">
+      通常料金
+    </div>
+
+    <table class="price-table">
+      <tr>
+        <th>SET料金</th>
+        <td>3,000円</td>
+      </tr>
+      <tr>
+        <th>延長 30分</th>
+        <td>1,500円</td>
+      </tr>
+      <tr>
+        <th>延長 1時間</th>
+        <td>3,000円</td>
+      </tr>
+      <tr>
+        <th>T.C</th>
+        <td>2,000円</td>
+      </tr>
+      <tr>
+        <th>指名料</th>
+        <td>3,000円</td>
+      </tr>
+    </table>
+
+  </div>
+
+  <!-- ホスホス -->
   <a
     class="link-button"
     href="https://www.host2.jp/shop/crystal02/index_sp.html"
